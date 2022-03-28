@@ -1,0 +1,12 @@
+.fa-solid{
+  font-size: 1.5em;
+  margin : 0 12px;
+  color: var(--blue);
+  transition: color 0.1s;
+}
+
+.fa-solid:hover{
+  font-size: 1.5em;
+  margin : 0 12px;
+  color: var(--sky-blue);
+}
