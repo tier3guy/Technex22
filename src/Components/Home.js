@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from './Navbar'
 import svg from '../Assets/main-svg.svg';
 import './CSS/Home.css';
+import MainButton from './MainButton';
+
+import { socketContext } from '../SocketContext';
 
 const Home = () => {
+
+  const [idToCall, setIdToCall] = useState('');
+  
+  const {mine_id, callAccepted, name, setName, leaveCall, callUser} = useContext(socketContext);
+
+  const callInterview = () => {
+    setName(prompt('Please enter your name !'));
+  }
+
+
   return (
     <div className="home">
     <Navbar/>
     <section className="container p-0 pt-5 pb-5 d-flex justify-content-between align-items-center">
-    
+   
       <div className="main-text w-50">
         <h1 className="font-main font-blue">Premium high quality video sharing platform.</h1>
         <h5 className="font-main font-light-orange pt-3">
@@ -17,14 +30,16 @@ const Home = () => {
 
         <div className="btn-container container p-0">
           <div className="d-flex align-items-center">
-            <button className="btn btn-primary font-barlow mt-3 shadow-none">Start Interview</button>
-            <input className="input font-barlow mt-3 shadow-nones font-barlow" placeholder='Enter the joining code'/>
+            <MainButton text="Call Interview" class__="mt-3" func = {() => callInterview()} />
+            <input className="input font-barlow mt-3 shadow-nones font-barlow" 
+                   placeholder='Enter the joining code' 
+                   onChange={ (e) => setIdToCall(e.target.value) }/>
           </div>
         </div>
 
         <hr/>
 
-        <p className="font-barlow font-light-orange">Enter the code and press enter to join the interview.</p>
+        <p className="font-barlow font-light-orange">Enter the ID and press enter to call the interview.</p>
 
       </div>
     
