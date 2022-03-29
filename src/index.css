@@ -70,6 +70,16 @@ body {
   color: var(--sky-blue);
 }
 
+.btn-primary:focus{
+  background: var(--blue);
+  color: var(--sky-blue);
+}
+
+.btn-primary:active{
+  background: var(--blue);
+  color: var(--sky-blue);
+}
+
 .input{
   padding: 18px;
   border: 1px solid var(--orange);

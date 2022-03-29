@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 import '../Components/CSS/Meeting.css';
-import { socketContext } from '../SocketContext';
+import { SocketContext } from '../SocketContext';
 import Controllers from './Controllers';
 
 const Meeting = () => {
 
-  const { call, callAccepted, video, userVideo, streamState, name, setName, callEnded, mine_id, callUser, answerCall, leaveCall} = useContext(socketContext);
+  const { call, callAccepted, video, userVideo, streamState, name, callEnded } = useContext(SocketContext);
 
   return (
     <div className="container-fluid p-3 meet-container d-flex">

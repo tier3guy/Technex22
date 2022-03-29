@@ -4,11 +4,11 @@ import './CSS/Navbar.css';
 import About from './About';
 import MainButton from './MainButton';
 
-import {socketContext} from '../SocketContext';
+import {SocketContext} from '../SocketContext';
 
 const Navbar = () => {
 
-  const {mine_id, name, setName} = useContext(socketContext);
+  const {mine_id, name, setName} = useContext(SocketContext);
 
   return (
     <nav class = "navbar container-fluid">
